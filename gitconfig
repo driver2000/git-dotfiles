@@ -1,0 +1,77 @@
+[advice]
+   statusHints = false
+
+[core]
+   abbrev = 12
+   editor = vim
+   pager = less -iMSx4 -FXR
+
+[grep]
+   extendRegexp = true
+   lineNumber = true
+
+[push]
+   default = simple
+
+[alias]
+
+   # shows list of files that have a merge conflict
+   conflicts = diff --name-only --diff-filter=U
+
+   record = add --patch
+
+   #revert last commit
+   undo = reset --soft HEAD^
+
+   ci = commit -av
+   st = status -s
+   br = branch
+
+   # log
+   filelog = log -u --decorate --abbrev-commit
+   find = log --pretty=format:'%C(yellow)%h %Creset%s %C(bold blue)[%cn]' --name-status --grep --decorate
+   glog = log --pretty=format:'%C(auto)%h%d %Creset%ad %s %C(bold blue)[%cn]' --graph --date=short
+   out = log @{u}.. --decorate --abbrev-commit --date=iso
+   ls = log --pretty=custom --decorate --branches --date=iso
+   ld = log --pretty=custom --decorate --date=relative
+   ll = log --pretty=format:'%C(yellow)%h%C(auto)%d%C(dim white) %ai %Creset%s%C(bold blue) [%cn]%C(auto)' --decorate --numstat
+
+
+   # stash
+   ss = stash
+   sl = stash list
+   sa = stash apply
+   sd = stash drop
+
+   #diff
+   last = diff HEAD^
+   dw = diff --word-diff
+   dc = diff --cached
+
+[color "diff"]
+   meta = yellow
+   frag = magenta bold
+   old = red bold
+   new = green bold
+
+[color "branch"]
+   current = yellow reverse
+   local = yellow
+   remote = green
+
+[color "status"]
+   added = yellow
+   changed = green
+   untracked = cyan
+
+[rerere]
+   enabled = true
+
+[pretty]
+   # Custom log output
+   custom = "%C(yellow)%h%C(auto)%d %C(dim white)%ad %Creset%s %C(bold blue)[%an]"
+   #                    │         │               │          │     author name ┘
+   #                    │         │               │          └─ message
+   #                    │         │               └─ date
+   #                    │         └─ decorations (branch, heads or tags)
+   #                    └─ hash (abbreviated)
