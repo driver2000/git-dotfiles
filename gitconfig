@@ -30,7 +30,7 @@
    filelog = log -u --decorate --abbrev-commit
    find = log --pretty=format:'%C(yellow)%h %Creset%s %C(blue)[%cn]' --name-status --grep --decorate
    glog = log --pretty=format:'%C(auto)%h%d %Creset%ad %s %C(blue)[%cn]' --graph --date=short
-   out = log @{u}.. --decorate --abbrev-commit --date=iso
+   out = log origin/master..HEAD --decorate --abbrev-commit --date=iso
    ls = log --pretty=custom --decorate --branches --date=iso
    ld = log --pretty=custom --decorate --date=relative
    ll = log --pretty=format:'%C(yellow)%h%C(auto)%d%C(dim white) %ai %Creset%s%C(blue) [%cn]%C(auto)' --decorate --numstat
