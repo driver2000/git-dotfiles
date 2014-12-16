@@ -8,7 +8,7 @@ How to install
 ```
 $ git clone https://github.com/driver2000/git-dotfiles.git
 $ cd git-dotfiles
-$ cp gitconfig ~/.gitconfig
+$ ln -s gitconfig ~/.gitconfig
 ```
 Add your user and email
 ----
