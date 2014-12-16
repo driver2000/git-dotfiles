@@ -14,7 +14,6 @@
    default = simple
 
 [alias]
-
    # shows list of files that have a merge conflict
    conflicts = diff --name-only --diff-filter=U
 
@@ -29,13 +28,12 @@
 
    # log
    filelog = log -u --decorate --abbrev-commit
-   find = log --pretty=format:'%C(yellow)%h %Creset%s %C(bold blue)[%cn]' --name-status --grep --decorate
-   glog = log --pretty=format:'%C(auto)%h%d %Creset%ad %s %C(bold blue)[%cn]' --graph --date=short
+   find = log --pretty=format:'%C(yellow)%h %Creset%s %C(blue)[%cn]' --name-status --grep --decorate
+   glog = log --pretty=format:'%C(auto)%h%d %Creset%ad %s %C(blue)[%cn]' --graph --date=short
    out = log @{u}.. --decorate --abbrev-commit --date=iso
    ls = log --pretty=custom --decorate --branches --date=iso
    ld = log --pretty=custom --decorate --date=relative
-   ll = log --pretty=format:'%C(yellow)%h%C(auto)%d%C(dim white) %ai %Creset%s%C(bold blue) [%cn]%C(auto)' --decorate --numstat
-
+   ll = log --pretty=format:'%C(yellow)%h%C(auto)%d%C(dim white) %ai %Creset%s%C(blue) [%cn]%C(auto)' --decorate --numstat
 
    # stash
    ss = stash
@@ -50,9 +48,9 @@
 
 [color "diff"]
    meta = yellow
-   frag = magenta bold
-   old = red bold
-   new = green bold
+   frag = magenta
+   old = red
+   new = green
 
 [color "branch"]
    current = yellow reverse
@@ -69,7 +67,7 @@
 
 [pretty]
    # Custom log output
-   custom = "%C(yellow)%h%C(auto)%d %C(dim white)%ad %Creset%s %C(bold blue)[%an]"
+   custom = "%C(yellow)%h%C(auto)%d %C(dim white)%ad %Creset%s %C(blue)[%an]"
    #                    │         │               │          │     author name ┘
    #                    │         │               │          └─ message
    #                    │         │               └─ date
