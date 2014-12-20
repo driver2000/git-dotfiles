@@ -7,14 +7,14 @@ How to install
 --------------
 ```sh
 $ git clone https://github.com/driver2000/git-dotfiles.git
-$ mkdir ~/git.d
-$ ln -s git-dotfiles/gitconfig ~/git.d/gitconfig
+$ mkdir ~/.git.d
+$ ln -s git-dotfiles/gitconfig ~/.git.d/gitconfig
 ```
 Git (1.7.10+) now supports this syntax in .gitconfig:
 
 ```gitconfig
 [include]
-    path = ~/git.d/gitconfig
+    path = ~/.git.d/gitconfig
 ```
 Add your user and email
 ----
