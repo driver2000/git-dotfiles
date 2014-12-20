@@ -25,15 +25,16 @@
    ci = commit -av
    st = status -s
    br = branch
+   co = checkout
 
    # log
    filelog = log -u --decorate --abbrev-commit
    find = log --pretty=format:'%C(yellow)%h %Creset%s %C(blue)[%cn]' --name-status --grep --decorate
    glog = log --pretty=format:'%C(auto)%h%d %Creset%ad %s %C(blue)[%cn]' --graph --date=short
-   out = log origin/master..HEAD --decorate --abbrev-commit --date=iso
+   out = log origin/master..HEAD --abbrev-commit --pretty=format:'%C(yellow)commit: %h%C(auto)%d%ndate: %ci%n%s%n'
    ls = log --pretty=custom --decorate --branches --date=iso
    ld = log --pretty=custom --decorate --date=relative
-   ll = log --pretty=format:'%C(yellow)%h%C(auto)%d%C(dim white) %ai %Creset%s%C(blue) [%cn]%C(auto)' --decorate --numstat
+   ll = log --pretty=format:'%C(yellow)%h%C(auto)%d%C(dim white) %ai %Creset%s%C(blue) [%cn]%C(auto)' --decorate --stat
 
    # stash
    ss = stash
@@ -41,7 +42,7 @@
    sa = stash apply
    sd = stash drop
 
-   #diff
+   # diff
    last = diff HEAD^
    dw = diff --word-diff
    dc = diff --cached
