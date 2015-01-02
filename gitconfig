@@ -70,8 +70,10 @@
 [pretty]
    # Custom log output
    custom = "%C(yellow)%h%C(auto)%d %C(dim white)%ad %Creset%s %C(blue)[%an]"
-   #                    │         │               │          │     author name ┘
+   #                    │         │               │          │ author name ┘
    #                    │         │               │          └─ message
    #                    │         │               └─ date
    #                    │         └─ decorations (branch, heads or tags)
    #                    └─ hash (abbreviated)
+
+   multiline = "%C(yellow)commit: %h%C(auto)%d%ndate: %ci%n%s%n"
